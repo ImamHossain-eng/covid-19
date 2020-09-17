@@ -17,14 +17,16 @@ const Cards = ({ data:{ confirmed, recovered, deaths, lastUpdate } }) => {
                         <Typography variant="h5">
                             <Countup start={0} end={confirmed.value} duration={2} separator="," />
                         </Typography>
-                        <Typography color="textSecondary">Real Date</Typography>
+                        <Typography color="textSecondary">{lastUpdate}</Typography>
                         <Typography variant="body2">Number of active cases of COVID-19</Typography>
                     </CardContent>
                 </Grid>
                 <Grid item component={Card}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Recovered</Typography>
-                        <Typography variant="h5">Real Data</Typography>
+                        <Typography variant="h5">
+                        <Countup start={0} end={recovered.value} duration={2} separator="," />
+                        </Typography>
                         <Typography color="textSecondary">Real Date</Typography>
                         <Typography variant="body2">Number of recovered cases of COVID-19</Typography>
                     </CardContent>
@@ -32,7 +34,9 @@ const Cards = ({ data:{ confirmed, recovered, deaths, lastUpdate } }) => {
                 <Grid item component={Card}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Deaths</Typography>
-                        <Typography variant="h5">Real Data</Typography>
+                        <Typography variant="h5">
+                        <Countup start={0} end={deaths.value} duration={2} separator="," />
+                        </Typography>
                         <Typography color="textSecondary">Real Date</Typography>
                         <Typography variant="body2">Number of deaths caused by COVID-19</Typography>
                     </CardContent>
